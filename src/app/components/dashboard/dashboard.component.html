@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+<div>
+  <button class="newUserStep" mat-raised-button (click)="openDialog()">Добавить пользовательский шаг</button>
+
+  <button class="newUserStep" mat-raised-button (click)="openDialogDemand()">Добавить пользовательское требование</button>
+
+  <div class="d-flex" cdkDropListGroup>
+    <div class="board-dnd-list" app-board-dnd-list *ngFor="let activity of activities"
+         [activity]="activity">
+
+    </div>
+  </div>
+
+<!--  DRAG AND DROP-->
+<!--  <mat-list-item  *ngFor="let activity of this.activities; let i = index">-->
+<!--    {{activity.id}}-->
+<!--    {{activity.name}}-->
+<!--  </mat-list-item >-->
+</div>

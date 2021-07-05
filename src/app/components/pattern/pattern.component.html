@@ -1,0 +1,81 @@
+<div class="pat">
+  <div class="pattern">
+    <div id="select-pattern">
+      <label>
+        <select class="form-control" [(ngModel)]="patt">
+          <option *ngFor="let pat of pattern" [ngValue]="pat"> {{pat.name}}</option>
+        </select>
+      </label>
+    </div>
+
+    <!--*ngIf="patt.name !== undefined"-->
+    <mat-form-field  class="full-width">
+      <mat-label>Название шаблона</mat-label>
+      <input name="name" matInput [(ngModel)]="patt.name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Формула</mat-label>
+      <input matInput [(ngModel)]="patt.formula">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Минимальное значение в шкале оценивания</mat-label>
+      <input matInput [(ngModel)]="patt.min">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Шаг шкалы оценивания</mat-label>
+      <input matInput [(ngModel)]="patt.step">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Максимальное значение в шкале оценивания</mat-label>
+      <input matInput [(ngModel)]="patt.max">
+    </mat-form-field>
+    <!--  <input  step="10" type="number" />      Для инпута таблиц и шкал      -->
+
+    <div class="savePattern">
+      <button mat-raised-button (click)="addPattern()" >Сохранить шаблон</button>
+    </div>
+    <div *ngIf="patt.id != null" class="deletePattern">
+      <button mat-raised-button (click)="deletePattern(patt.id)" >Удалить шаблон</button>
+    </div>
+  </div>
+
+  <div>
+    <div class="addCriteria" mat-dialog-actions>
+      <button mat-raised-button (click)="openDialogDemand(patt.id)" >Добавить новый критерий</button>
+    </div>
+
+    <div class="criteria">
+      <table mat-table [dataSource]="patt.criteria" class="mat-elevation-z8">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Наименование </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="abbreviation">
+          <th mat-header-cell *matHeaderCellDef> Сокращенное назначение для формулы </th>
+          <td mat-cell *matCellDef="let element"> {{element.abbreviation}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef> Удалить </th>
+          <td mat-cell *matCellDef="let element; let i = index">
+            <div class="delete" >
+              <button mat-raised-button (click)="deleteCriteria(element.id, i, patt)" >Удалить</button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+
+</div>

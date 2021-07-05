@@ -2,26 +2,31 @@
   <mat-toolbar class="navbar-color mat-elevation-z8 p-0" fxLayout="row" fxLayoutAlign="start stretch"
                style="z-index: 2">
 
-    <button mat-button (click)="drawer.toggle()">
+    <button *ngIf="href" mat-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
 
-    <button mat-button routerLink="/" routerLinkActive="router-link-active">
+    <button *ngIf="href" mat-button routerLink="/project" routerLinkActive="router-link-active">
       <mat-icon>home</mat-icon>
     </button>
 
-    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px" class="pl-3">
-      <span fxHide fxShow.xs>FX: XS</span>
-      <span fxHide fxShow.sm>FX: SM</span>
-      <span fxHide fxShow.md>FX: MD</span>
-      <span fxHide fxShow.lg>FX: LG</span>
-      <span fxHide fxShow.xl>FX: XL</span>
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" class="pl-3">
+<!--      <span fxHide fxShow.xs>FX: XS</span>-->
+<!--      <span fxHide fxShow.sm>FX: SM</span>-->
+<!--      <span fxHide fxShow.md>FX: MD</span>-->
+<!--      <span fxHide fxShow.lg>FX: LG</span>-->
+<!--      <span fxHide fxShow.xl>FX: XL</span>-->
+      <span fxHide fxShow.xs></span>
+      <span fxHide fxShow.sm></span>
+      <span fxHide fxShow.md></span>
+      <span fxHide fxShow.lg></span>
+      <span fxHide fxShow.xl></span>
     </div>
 
     <span fxFlex></span>
 
-    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-<!--      <button mat-button routerLink="/page1" routerLinkActive="router-link-active no-border">Page 1</button>-->
+    <div *ngIf="href" fxLayout="row" fxShow="true" fxShow.gt-sm>
+      <button mat-button routerLink="/login" (click)="flag()" routerLinkActive="router-link-active no-border">logout</button>
 <!--      <button mat-button routerLink="/page2" routerLinkActive="router-link-active no-border">Page 2</button>-->
 <!--      <button mat-button routerLink="/page3" routerLinkActive="router-link-active no-border">Page 3</button>-->
 <!--      <button mat-button routerLink="/page4" routerLinkActive="router-link-active no-border">Page 4</button>-->
@@ -31,29 +36,34 @@
 
   <mat-drawer-container fxFlex autosize class="background">
     <mat-drawer #drawer>
-<!--      <div fxLayout="column">-->
-<!--        <button mat-button routerLink="/page1" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">-->
-<!--          <mat-icon class="mr-2">filter_1</mat-icon>Page 1</button>-->
+      <div fxLayout="column">
+
+<!--        <button mat-button routerLink="/project" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">-->
+<!--          Проекты</button>-->
 <!--        <mat-divider></mat-divider>-->
-<!--        <button mat-button routerLink="/page2" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">-->
-<!--          <mat-icon class="mr-2">filter_2</mat-icon>Page 2</button>-->
-<!--        <mat-divider></mat-divider>-->
-<!--        <button mat-button routerLink="/page3" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">-->
-<!--          <mat-icon class="mr-2">filter_3</mat-icon>Page 3</button>-->
-<!--        <mat-divider></mat-divider>-->
-<!--        <button mat-button routerLink="/page4" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">-->
-<!--          <mat-icon class="mr-2">filter_4</mat-icon>Page 4</button>-->
-<!--        <mat-divider></mat-divider>-->
+
+        <button mat-button routerLink="/dashboard/1" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+<!--          <mat-icon class="mr-2">filter_1</mat-icon> сюда можно иконку кароч засунуть, будет КРАСИВО-->Dashboard</button>
+        <mat-divider></mat-divider>
+
+        <button mat-button routerLink="/rank/1" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+          Оценка требований</button>
+        <mat-divider></mat-divider>
+
+        <button mat-button routerLink="/pattern/1" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+          Шаблоны приоритезации</button>
+        <mat-divider></mat-divider>
+
 <!--        <button mat-button routerLink="/page5" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">-->
 <!--          <mat-icon class="mr-2">filter_5</mat-icon>Page 5</button>-->
 <!--        <mat-divider></mat-divider>-->
-<!--      </div>-->
+      </div>
     </mat-drawer>
 
     <!--PAGES-->
-    <div style="display: inline;">
+<!--    <div style="display: inline;">-->
       <router-outlet></router-outlet>
-    </div>
+<!--    </div>-->
 
   </mat-drawer-container>
 </div>

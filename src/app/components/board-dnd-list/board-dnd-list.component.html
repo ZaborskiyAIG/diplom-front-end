@@ -1,0 +1,46 @@
+<div *ngIf="check(activity) == 1" class="status-list" style="min-width: 10px; width: 20px; margin-left: 0;">
+  <div class="pl-3 pr-2 pb-4 pt-3" >
+    <button class="button-icon" mat-icon-button (click)="deleteActivity()" color="basic">
+      <mat-icon>delete_outline</mat-icon>
+    </button>
+    <div class="editable" [ngStyle]="styleObject()" [attr.contenteditable]="allowEdit" (dblclick)="onDblClick($event)" (blur)="onBlur($event)" #counter>
+      {{activity.name}}<br>
+    </div>
+  </div>
+  <div class="issue-card-container pl-2" cdkDropList [cdkDropListData]="activity.demands"
+       (cdkDropListDropped)="drop($event, activity.id)" >
+    <app-cards-demands *ngFor="let demand of activity.demands" [demands]="demand" [cdkDragData]="demand" cdkDrag>
+    </app-cards-demands>
+  </div>
+</div>
+
+<div *ngIf="check(activity) == 2" class="status-list" style="min-width: 200px; width: 200px; height: 68px; margin-left: 0;">
+    <div class="pl-3 pr-2 pb-4 pt-3" >
+<!--      <button class="button-icon" mat-icon-button (click)="deleteActivity()" color="basic">-->
+<!--        <mat-icon>delete_outline</mat-icon>-->
+<!--      </button>-->
+      <div class="editable" [ngStyle]="styleObject()" [attr.contenteditable]="allowEdit" (dblclick)="onDblClick($event)" (blur)="onBlur($event)" #counter>
+        {{activity.name}} <br>
+      </div>
+    </div>
+    <div class="issue-card-container pl-2" cdkDropList [cdkDropListData]="activity.demands"
+         (cdkDropListDropped)="drop($event, activity.id)" >
+      <app-cards-demands *ngFor="let demand of activity.demands" [demands]="demand" [cdkDragData]="demand" cdkDrag>
+      </app-cards-demands>
+    </div>
+</div>
+
+<div *ngIf="check(activity) == 3" class="status-list">
+  <div class="pl-3 pr-2 pb-4 pt-3">
+    <div  class="editable" [ngStyle]="styleObject()" [attr.contenteditable]="allowEdit" (dblclick)="onDblClick($event)" (blur)="onBlur($event)" #counter>
+     {{activity.name}}
+    </div>
+  </div>
+  <div class="issue-card-container pl-2" cdkDropList [cdkDropListData]="activity.demands"
+       (cdkDropListDropped)="drop($event, activity.id)" >
+    <app-cards-demands *ngFor="let demand of activity.demands" [demands]="demand" [cdkDragData]="demand" cdkDrag>
+    </app-cards-demands>
+  </div>
+</div>
+
+

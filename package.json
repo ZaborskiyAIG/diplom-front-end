@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --base-href http://localhost:4200/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
+    "@angular/flex-layout": "^11.0.0-beta.33",
     "@angular/animations": "~11.0.0",
     "@angular/cdk": "^11.0.0",
     "@angular/common": "~11.0.0",

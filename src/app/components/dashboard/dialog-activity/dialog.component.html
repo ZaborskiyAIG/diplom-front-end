@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Новый пользовательский шаг</h1>
+<div mat-dialog-content>
+    <mat-form-field class="full-width">
+      <mat-label>Пользовательский шаг</mat-label>
+      <input name="name" matInput [(ngModel)]="data.name">
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions >
+  <button mat-raised-button [mat-dialog-close]="data">Сохранить</button>
+</div>

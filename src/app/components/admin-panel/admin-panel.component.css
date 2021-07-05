@@ -1,0 +1,17 @@
+.search {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fafafa;
+}
+
+.admin {
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-top: 50px;
+}

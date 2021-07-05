@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Новое требование</h1>
+<div mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label>Пользовательское требование</mat-label>
+    <input name="name" matInput [(ngModel)]="data.name">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Описание</mat-label>
+    <textarea name="description" matInput [(ngModel)]="data.description"></textarea>
+  </mat-form-field>
+
+  <div id="color-wrap">
+    <p> Цвет: </p>
+    <label>
+      <!--        <select class="form-control" (change)="changeColor($event)">-->
+      <select class="form-control" [(ngModel)]="data.color">
+        <option *ngFor="let col of colors" [value]="col"> {{col}}</option>
+      </select>
+    </label>
+
+    <div class="boxColor" style="background-color: {{data.color}};"></div>
+  </div>
+
+</div>
+
+<div class="delete" mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data">Сохранить</button>
+  <button *ngIf="data.name!=null" mat-raised-button (click)="deleteDemand(data.id)" >Удалить</button>
+</div>

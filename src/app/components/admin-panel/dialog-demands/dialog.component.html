@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Редактирование пользователя</h1>
+<div mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label>Email</mat-label>
+    <input name="email" matInput [(ngModel)]="data.email">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput [(ngModel)]="data.password">
+  </mat-form-field>
+
+
+  <div id="color-wrap">
+    <p> Роль: </p>
+    <label>
+      <!--        <select class="form-control" (change)="changeColor($event)">-->
+      <select class="form-control" [(ngModel)]="data.role">
+        <option *ngFor="let role of roles" [value]="role"> {{role}}</option>
+      </select>
+    </label>
+  </div>
+</div>
+

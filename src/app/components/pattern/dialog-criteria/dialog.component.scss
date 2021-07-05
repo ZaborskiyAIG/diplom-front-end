@@ -1,0 +1,50 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+#color-wrap {
+  text-align:center;
+  display:flex;
+  justify-content: flex-end;
+  align-items:center;
+  flex-direction:row;
+}
+
+p {
+  height: 38px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+label {
+  //margin: 5px 50px 10px 55px;
+  padding-left: 30px;
+  width: 170px;
+}
+
+.boxColor {
+  border: 1px solid #9fa2ac;
+  border-radius: 5px;
+  flex-grow: 1;
+  //transition-property: all;
+  //transition-duration: .1s;
+  //-webkit-user-select: none;
+  //-moz-user-select: none;
+  //-ms-user-select: none;
+  //user-select: none;
+  margin: 5px 50px 10px 65px;
+  padding: 25px 40px 10px 10px;
+}
+
+.delete {
+  text-align:center;
+  display:flex;
+  justify-content: flex-end;
+}
+

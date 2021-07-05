@@ -1,0 +1,39 @@
+table {
+  width: 110%;
+}
+
+.criteria {
+  padding-left: 150px;
+  padding-top: 20px;
+}
+
+.addCriteria {
+  padding-top: 20px;
+  padding-left: 200px;
+}
+
+.pattern {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding-left: 35px;
+}
+
+
+
+#select-pattern {
+  width: 200px;
+  margin: 20px 10px 10px 20px;
+}
+
+.pat {
+  margin: 1px;
+  bottom: 1px;
+  display: flex;
+}
+
+
+.savePattern, .deletePattern {
+  width: 140px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Новый критерий</h1>
+<div mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label>Наименование критерия</mat-label>
+    <input name="name" matInput [(ngModel)]="data.name">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Сокращенное назначение для формулы</mat-label>
+    <input name="name" matInput [(ngModel)]="data.abbreviation">
+  </mat-form-field>
+
+</div>
+
+<div class="delete" mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data">Сохранить</button>
+</div>
